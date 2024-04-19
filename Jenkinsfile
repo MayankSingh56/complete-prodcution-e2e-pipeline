@@ -42,5 +42,14 @@ pipeline {
         }
       }
     }
+
+stage ("qualitygates"){
+  steps{
+    script {
+      waitForQualityGate abortPipeline: false, credentialsId: "sonar-jenkins-token"
+    }
+  }
+}
+
   }
 }
