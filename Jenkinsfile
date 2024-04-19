@@ -35,7 +35,7 @@ pipeline {
 
     stage ("Sonarqube configure") {
       steps {
-        withSonarQubeEnv(credentialsId: "sonar-jenkins-token", installationName: 'Sonarqube-latest') {
+        withSonarQubeEnv(credentialsId: "sonar-jenkins-token", installationName: "Sonarqube-latest") {
         sh "mvn sonar:sonar"
         }
       }
