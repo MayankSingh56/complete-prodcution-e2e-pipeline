@@ -12,7 +12,7 @@ pipeline {
     RELEASE="1.0.0"
     DOCKER_USER= "mayank56"
     DOCKER_PASS= "Dockercred"
-    IMAGE_NAME= "${DOCKER_USER}" + "/" + "${APP_NAME}"
+    IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
     IMAGE_TAG= "${RELEASE}-${BUILD_NUMBER}"
   }
 
@@ -64,7 +64,7 @@ stage ("docker build and push the image") {
   steps{
     script {
       docker.withRegistry ('', DOCKER_PASS ) {
-        docker_image= docker.build("${IMAGE_NAME}")
+        docker_image= docker.build "${IMAGE_NAME}"
       }
 
        docker.withRegistry ('', DOCKER_PASS ) {
