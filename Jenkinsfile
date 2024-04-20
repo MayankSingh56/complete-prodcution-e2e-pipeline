@@ -8,11 +8,11 @@ pipeline {
   }
 
   environment {
-    APP_NAME = "complete-CICD-e2e-pipeline" // Adjusted to follow naming pattern
+    APP_NAME = "complete-cicd-e2e-pipeline" // Adjusted to lowercase
     RELEASE = "1.0.0"
     DOCKER_USER = "mayank56"
     DOCKER_PASS = "Dockercred"
-    IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}" // Adjusted to follow naming pattern
+    IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}" // Adjusted to lowercase
     IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
   }
 
